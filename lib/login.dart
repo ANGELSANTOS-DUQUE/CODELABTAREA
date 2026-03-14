@@ -52,7 +52,6 @@ class _LoginPageState extends State<LoginPage> {
                 labelText: 'Username',
               ),
             ),
-
             // spacer
             const SizedBox(height: 12.0),
             // [Password]
@@ -75,6 +74,8 @@ class _LoginPageState extends State<LoginPage> {
                   child: const Text('CANCEL'),
                   onPressed: () {
                     // TODO: Clear the text fields (101)
+                    _usernameController.clear();
+                    _passwordController.clear();
                   },
                 ),
                 // TODO: Add an elevation to NEXT (103)
