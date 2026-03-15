@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'login.dart';
 import 'model/product.dart';
 
 // TODO: Add velocity constant (104)
@@ -253,21 +253,29 @@ class _BackdropState extends State<Backdrop>
       actions: <Widget>[
         // TODO: Add shortcut to login screen from trailing icons (104)
         IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.search,
-            semanticLabel: 'search',
+            semanticLabel: 'login', // New code
           ),
           onPressed: () {
             // TODO: Add open login (104)
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
+            );
           },
         ),
         IconButton(
-          icon: Icon(
+          icon: const Icon(
             Icons.tune,
-            semanticLabel: 'filter',
+            semanticLabel: 'login', // New code
           ),
           onPressed: () {
             // TODO: Add open login (104)
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (BuildContext context) => LoginPage()),
+            );
           },
         ),
       ],
