@@ -13,6 +13,11 @@
 // limitations under the License.
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+
+import 'model/product.dart';
+import 'model/products_repository.dart';
+import 'supplemental/asymmetric_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -73,36 +78,11 @@ class HomePage extends StatelessWidget {
       ),
       // TODO: Add a grid view (102)
       body: GridView.count(
-        crossAxisCount: 2,
-        padding: const EdgeInsets.all(16.0),
-        childAspectRatio: 8.0 / 9.0,
-        // TODO: Build a grid of cards (102)
-        children: <Widget>[
-          Card(
-            clipBehavior: Clip.antiAlias,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                AspectRatio(
-                  aspectRatio: 18.0 / 11.0,
-                  child: Image.asset('assets/diamond.png'),
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(16.0, 12.0, 16.0, 8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text('Title'),
-                      const SizedBox(height: 8.0),
-                      Text('Secondary Text'),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          )
-        ],
-      ),
+          crossAxisCount: 2,
+          padding: const EdgeInsets.all(16.0),
+          childAspectRatio: 8.0 / 9.0,
+          children: _buildGridCards(10) // Replace
+          ),
       // TODO: Set resizeToAvoidBottomInset (101)
       resizeToAvoidBottomInset: false,
     );
