@@ -26,11 +26,26 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       // TODO: Add app bar (102)
       appBar: AppBar(
-          // TODO: Add buttons and title (102)
+        // TODO: Add buttons and title (102)
+        title: const Text('SHRINE'),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.menu,
+            semanticLabel: 'menu',
           ),
+          onPressed: () {
+            print('Menu button');
+          },
+        ),
+        // TODO: Add trailing buttons (102)
+      ),
       // TODO: Add a grid view (102)
-      body: Center(
-        child: Text('You did it!'),
+      body: GridView.count(
+        crossAxisCount: 2,
+        padding: const EdgeInsets.all(16.0),
+        childAspectRatio: 8.0 / 9.0,
+        // TODO: Build a grid of cards (102)
+        children: <Widget>[Card()],
       ),
       // TODO: Set resizeToAvoidBottomInset (101)
       resizeToAvoidBottomInset: false,
